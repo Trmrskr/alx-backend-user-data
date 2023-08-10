@@ -1,6 +1,6 @@
 # User Data
 
-The projects contained in this repository is about handling of user's personal data. They treat the concept of Personal data, PII, basic authentication, session authentication and User authentication services.
+The projects contained in this repository are about handling of user's personal data. They treat the concept of Personal data, PII, basic authentication, session authentication and User authentication services.
 
 | Project name | Description |
 | ------------ | ----------- |
