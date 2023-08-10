@@ -22,11 +22,11 @@ class Auth:
         if not path.endswith('/'):
             path += '/'
 
-        if '*' in path:
-            # handle paths which ends with * and in excluded path
-            path_split = path.split('*')
-            for item in excluded_path:
-                if item.startswith(path_split[0]):
+        for pth in excluded_paths:
+            if '*' in pth:
+                # handle paths which ends with * and in excluded path
+                pth_split = pth.split('*')
+                if path.startswith(pth_split[0]):
                     return False
 
         if path not in excluded_paths:
