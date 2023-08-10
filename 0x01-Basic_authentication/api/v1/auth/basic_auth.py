@@ -62,6 +62,9 @@ class BasicAuth(Auth):
         email = credentials[0]
         password = credentials[1]
 
+        for i in range(2, len(credentials)):
+            password += credentials[i]
+
         return (email, password)
 
     def user_object_from_credentials(self,
@@ -73,10 +76,8 @@ class BasicAuth(Auth):
             return None
         if user_pwd is None or not isinstance(user_pwd, str):
             return None
-#        try:
+
         users = User.search({"email": user_email})
-#        except Exception:
-#            return None
         if not users or users == []:
             return None
 
