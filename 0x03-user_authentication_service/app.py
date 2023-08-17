@@ -89,7 +89,7 @@ def profile() -> str:
 def get_reset_password_token() -> str:
     """get reset password token"""
     try:
-        email = request.form('email')
+        email = request.form['email']
     except KeyError:
         abort(403)
 
