@@ -9,13 +9,13 @@ app = Flask(__name__)
 AUTH = Auth()
 
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['GET'], strict_slashes=False)
 def home() -> str:
     """ Home route """
     return jsonify({"message": "Bienvenue"})
 
 
-@app.route('/users', methods=['POST'])
+@app.route('/users', methods=['POST'], strict_slashes=False)
 def register_users() -> str:
     """Registers a new user if it does not exist before"""
     try:
@@ -32,7 +32,7 @@ def register_users() -> str:
     return jsonify({"email": email, "message": "user created"})
 
 
-@app.route('/sessions', methods=['POST'])
+@app.route('/sessions', methods=['POST'], strict_slashes=False)
 def login() -> str:
     """login user"""
     try:
@@ -51,7 +51,7 @@ def login() -> str:
     return response
 
 
-@app.route('/sessions', methods=['DELETE'])
+@app.route('/sessions', methods=['DELETE'], strict_slashes=False)
 def logout() -> str:
     """ Logout user """
     session_id = request.cookies.get('session_id', None)
