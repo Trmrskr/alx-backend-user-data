@@ -37,7 +37,7 @@ class Auth:
         else:
             raise ValueError(f'User {email} already exists')
 
-    def valid_login(self, email: str, password: str):
+    def valid_login(self, email: str, password: str) -> bool:
         """Validate credentials"""
         if email == '' or password == '':
             return False
@@ -50,7 +50,4 @@ class Auth:
         user_password = user.hashed_password
         encoded_password = password.encode()
 
-        if bcrypt.checkpw(encoded_password, user_password):
-            return True
-
-        return False
+        return  bcrypt.checkpw(encoded_password, user_password)
