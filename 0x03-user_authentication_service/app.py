@@ -86,10 +86,10 @@ def profile() -> str:
 
 
 @app.route('/reset_password', method=['POST'], strict_slashes=False)
-def reset_password() -> str:
+def get_reset_password_token() -> str:
     """get reset password token"""
     try:
-        email = request.get('email')
+        email = request.form('email')
     except KeyError:
         abort(403)
 
