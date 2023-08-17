@@ -50,7 +50,7 @@ class Auth:
         user_password = user.hashed_password
         encoded_password = password.encode()
 
-        return  bcrypt.checkpw(encoded_password, user_password)
+        return bcrypt.checkpw(encoded_password, user_password)
 
     def create_session(self, email: str) -> str:
         """Create session"""
@@ -63,5 +63,3 @@ class Auth:
         self._db.update_user(user.id, session_id=session_id)
 
         return session_id
-
-
