@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-""" End-to-end integration test"""
+"""
+  End-to-end integration test
+  This script works like a client or user agent querying correspondingly
+  named functions in the backend.
+
+  In some other scripts e.g. bash curl can be used to serve this purpose
+"""
 
 import requests
 
